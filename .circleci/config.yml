@@ -13,7 +13,7 @@ jobs:
     macos:
       xcode: "9.0"
     steps:
-      - run: curl -s https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev | sh
+      - run: curl -s https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
 workflows:
   version: 2
   build_and_test:
