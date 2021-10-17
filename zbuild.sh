@@ -128,7 +128,7 @@ ZIPNAME=$ZIPNAME
 # Build Author
 # Take care, it should be a universal and most probably, case-sensitive
 AUTHOR="@Arrayfs"
-AUTHOR_HOST="final"
+AUTHOR_HOST="docker"
 # Architecture
 ARCH=arm64
 # The name of the device for which the kernel is built
@@ -335,7 +335,6 @@ build_kernel() {
 	fi
 
 	make O=out $DEFCONFIG
-	make O=out menuconfig
 	if [ $DEF_REG = 1 ]
 	then
 		cp .config out/arch/arm64/configs/$DEFCONFIG
