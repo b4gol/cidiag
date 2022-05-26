@@ -1,9 +1,5 @@
 version: 3.0
 jobs:
-  machine:
-    machine: true
-    steps:
-      - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
   macos:
     macos:
       xcode: "9.0"
@@ -13,5 +9,4 @@ workflows:
   version: 3.0
   build_and_test:
     jobs:
-      - machine
       - macos
