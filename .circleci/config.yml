@@ -2,11 +2,11 @@ version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
- build:
+ mymachine:
     docker:
       - image: cimg/node:17.2-browsers # DLC does nothing here, its caching depends on commonality of the image layers.
         auth:
-          username: arrayfs
+          username: arrayfs # Config Processing Error (Don't rerun)
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
@@ -17,8 +17,9 @@ jobs:
                arrayfs/ssh@master .
         shell: bash . 
         jobs:
-myjob:
-    docker:
-      - image: cimg/base:2021.04
+mymachine:
+    orbs:
+      - node: circleci/node@x.y #orb Config Processing Error (Don't rerun)
     Permitted keys:
       - docker
+      - mymachine
