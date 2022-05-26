@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.2.3
+  up-tools: circleci/browser-tools@1.2.3
 jobs:
  mymachine:
     docker:
@@ -10,13 +10,11 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - 
-       resource-class: xlarge
-         checkout
+      - run: 
+          user
+    resource-class: xlarge
     shell: 
-           b4gol/circleci/ssh@master .
-         build kernel
-          -run 
-              macos
-    mymachine: 
-      #/jobs/mymachine
+           b4gol/circleci/ssh@master . 
+          - checkout
+            node/install-packages
+       command
