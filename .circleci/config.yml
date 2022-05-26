@@ -1,12 +1,23 @@
-version: 3.0
+version: 3
 jobs:
+  docker:
+    docker:
+      - image: ruby:3.0
+    steps:
+      - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
+  machine:
+    machine: true
+    steps:
+      - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
   macos:
     macos:
       xcode: "9.0"
     steps:
       - run: curl -s https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev | sh
 workflows:
-  version: 3.0
+  version: 3
   build_and_test:
     jobs:
+      - docker
+      - machine
       - macos
