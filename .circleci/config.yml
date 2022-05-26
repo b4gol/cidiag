@@ -6,10 +6,10 @@ jobs:
     docker:
       - image: cimg/node:17.2-browsers # DLC does nothing here, its caching depends on commonality of the image layers.
         auth:
-          username: mydockerhub-user
+          username: arrayfs
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true # DLC will explicitly cache layers here and try to avoid rebuilding.
-    - uses: fastai/workflows/ssh@master .
+    - uses: arrayfs/workflows/ssh@master .
