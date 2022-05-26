@@ -3,7 +3,6 @@ jobs:
   docker:
     docker:
      - image: buildpack-deps:trusty
-        auth:
           username: arrayfs
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     resource_class: xlarge
