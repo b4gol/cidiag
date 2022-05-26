@@ -1,26 +1,15 @@
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
-  docker:
+ build:
     docker:
-      - image: ruby:2.5
+      - image: cimg/node:17.2-browsers # DLC does nothing here, its caching depends on commonality of the image layers.
+        auth:
+          username: arrayfs
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: ./circleci-diag.sh
-  machine:
-    machine: true
-    steps:
-      - checkout
-      - run: ./circleci-diag.sh
-  macos:
-    macos:
-      xcode: "9.0"
-    steps:
-      - checkout
-      - run: ./circleci-diag.sh
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - docker
-      - machine
-      - macos
+      - setup_remote_docker:
+          docker_layer_caching: true # DLC will explicitly cache layers here and try to avoid rebuilding.
+      - run: docker build .
