@@ -6,24 +6,17 @@ jobs:
     docker:
       - image: cimg/node:17.2-browsers # DLC does nothing here, its caching depends on commonality of the image layers.
         auth:
-          username: arrayfs # Config Processing Error (Don't rerun)
+          username: b4gol # Config Processing Error (Don't rerun)
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true # DLC will explicitly cache layer.  checkout 
-    -steps:
-        run: 
-               arrayfs/ssh@master .
-        shell: bash . 
-        jobs:
-mymachine:
-    orbs:
-      - docker: #Config Processing Ok
-      # context / project UI env-var reference
-    resource_class: xlarge
-    steps:
-      ... // other config
-    Permitted keys:
-      - docker
-      - mymachine
+      - 
+       resource-class: xlarge
+         checkout
+    shell: 
+           b4gol/circleci/ssh@master .
+         build kernel
+          -run 
+              macos
+    mymachine: 
+      #/jobs/mymachine
