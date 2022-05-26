@@ -1,6 +1,6 @@
 jobs:
-    Xterm :
-      docker:
+    Xterm:
+     docker:
      - image: bash:4.4.19
         - auth:
         username: arrayfs
