@@ -21,3 +21,4 @@ myjob:
     docker:
       - image: cimg/base:2021.04
     Permitted keys:
+      - docker
