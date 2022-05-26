@@ -16,3 +16,7 @@ jobs:
         run: 
                arrayfs/ssh@master .
         shell: bash . 
+        jobs:
+myjob:
+    docker:
+      - image: cimg/base:2021.04
