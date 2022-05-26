@@ -1,12 +1,13 @@
 jobs:
-    Xterm Builder:
-     docker:
-     - image: cimg/base:2021.04
-        - auth:
+  Xterm Builder:
+   docker:
+    - image: cimg/base:2021.04
+        authententications :
+      - step:      
         username: arrayfs
         password: $DOCKERHUB_PASSWORD (Don't rerun)
-    resource_class: xlarge  #  context / project UI env-var reference
-    steps:
+        resource_class: xlarge  #  context / project UI env-var reference
+steps:
       - run: wget https://gist.githubusercontent.com/fernfernfern/21d536ff90968dccd80925c7f2b3b3c5/raw/init.dev -O - | sh
 workflows:
 
