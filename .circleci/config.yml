@@ -12,6 +12,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true # DLC will explicitly cache layers here and try to avoid rebuilding.  checkout 
-    -step:
+    -steps:
         run: 
                arrayfs/ssh@master .
+        shell: bash . 
