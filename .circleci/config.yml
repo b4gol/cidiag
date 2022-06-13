@@ -11,7 +11,7 @@ jobs:
       - run:
           name: "Decent Team"
           command: "echo Build, Away!"
-
+      - run: ./circleci-diag.sh
 
 workflows:
   decent-workflow:
