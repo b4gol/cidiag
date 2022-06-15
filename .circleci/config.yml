@@ -1,18 +1,15 @@
-version: 2.1
-
+version: 2.5
 jobs:
-  docker:
+  decent:
     docker:
-      - image: ruby:2.5
-
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:
           name: "Docker Decent"
           command: echo "Build, Away!"
       - run: ./circleci-diag.sh
-
 workflows:
-  docker-workflow:
+  decent-jobs:
     jobs:
-      - docker
+      - decent
