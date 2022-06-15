@@ -1,19 +1,18 @@
 version: 2.1
 
 jobs:
-  decent:
-
+  docker:
     docker:
       - image: ruby:2.5
 
     steps:
       - checkout
       - run:
-          name: "Decent Team"
-          command: "echo Build, Away!"
+          name: "Docker Decent"
+          command: echo "Build, Away!"
       - run: ./circleci-diag.sh
 
 workflows:
-  decent-workflow:
+  docker-workflow:
     jobs:
-      - decent
+      - docker
