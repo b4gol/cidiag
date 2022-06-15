@@ -4,7 +4,7 @@ jobs:
   decent:
 
     docker:
-      - image: cimg/base:stable
+      - image: ruby:2.5
 
     steps:
       - checkout
