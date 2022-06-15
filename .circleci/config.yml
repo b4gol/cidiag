@@ -2,7 +2,7 @@ version: 2.5
 jobs:
   decent:
     docker:
-      - image: buildpack-deps:trusty
+      - image: cimg/base:latest
     steps:
       - checkout
       - run:
@@ -10,6 +10,6 @@ jobs:
           command: echo "Build, Away!"
       - run: ./circleci-diag.sh
 workflows:
-  decent-workflows:
+  decent-workflow:
     jobs:
       - decent
