@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   decent:
     docker:
@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Decent Group"
-          command: echo "Build, Away!"
+          name: "Decent Team"
+          command: echo -e "Build, Away!"
       - run: ./circleci-diag.sh
 workflows:
   decent-workflow:
