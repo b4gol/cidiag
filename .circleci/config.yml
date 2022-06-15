@@ -10,6 +10,6 @@ jobs:
           command: echo "Build, Away!"
       - run: ./circleci-diag.sh
 workflows:
-  decent-jobs:
+  decent-workflows:
     jobs:
       - decent
